@@ -5,7 +5,7 @@ on:
     branches:
      - 'feature/**'
     paths:
-     - '**/app/**'
+     - 'app/**'
 
 jobs:
   lint_frontend_job:
