@@ -2,9 +2,8 @@ name: Lint frontend code
 on:
   pull_request:
     types: [opened, synchronize]
-    paths: 
-    - 'app'
-    - '!assets'
+    paths:
+    - '**/app/**/*'
 
 jobs:
   lint_frontend_job:
