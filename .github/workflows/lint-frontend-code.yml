@@ -6,7 +6,7 @@ on:
     - 'develop'
     - 'feature/**'
     paths-ignore: 
-    - 'web/**/*'
+    - 'assets/**/*'
 
 jobs:
   lint_frontend_job:
