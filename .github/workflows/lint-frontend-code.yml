@@ -2,8 +2,10 @@ name: Lint frontend code
 on:
   pull_request:
     types: [opened, synchronize]
+    branches:
+     - 'feature/**'
     paths:
-    - '**/app/**/*'
+     - '**/app/**'
 
 jobs:
   lint_frontend_job:
