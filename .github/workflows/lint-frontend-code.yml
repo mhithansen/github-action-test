@@ -3,7 +3,8 @@ on:
   pull_request:
     types: [opened, synchronize]
     paths: 
-    - 'app/**/*'
+    - 'app'
+    - '!assets'
 
 jobs:
   lint_frontend_job:
