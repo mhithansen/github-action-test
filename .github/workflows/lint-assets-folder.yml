@@ -1,5 +1,10 @@
 name: Lint assets folder
 on:
+ push:
+    branches:
+      - 'feature/**'
+    paths:
+     - 'assets/**'
  pull_request:
     types: [opened, synchronize]
     branches:
