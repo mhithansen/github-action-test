@@ -1,0 +1,35 @@
+{
+  "name": "assets",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build --mode development --emptyOutDir",
+    "build:prod": "tsc && vite build --mode production --emptyOutDir",
+    "watch": "tsc && vite build --mode development --watch --emptyOutDir",
+    "watch:prod": "tsc && vite build --mode production --watch --emptyOutDir",
+    "lint": "eslint --fix --ext .ts ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.17",
+    "@babel/preset-env": "^7.22.15",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@types/node": "^20.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "postcss": "^8.4.24",
+    "postcss-preset-env": "^9.0.0",
+    "prettier": "3.0.1",
+    "prettier-eslint": "^15.0.1",
+    "sass": "^1.63.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "@thansen-gruppen/bw-design-system": "^0.6.25"
+  }
+}
