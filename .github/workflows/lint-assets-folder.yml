@@ -2,8 +2,9 @@ name: Lint assets folder
 on:
  pull_request:
     types: [opened, synchronize]
-    paths-ignore:
-      - 'app/**/*'
+    paths:
+    - 'assets'
+    - '!app'
     
 jobs:
   lint_assets_folder:
