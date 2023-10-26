@@ -1,0 +1,35 @@
+name: Lint assets folder
+on:
+ pull_request:
+    types: [opened, synchronize]
+    branches: 
+    - 'develop'
+    - 'feature/**'
+    
+jobs:
+  lint_assets_folder:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request')
+    name: Lint assets folder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: '16.13.1'
+          check-latest: true
+          registry-url: "https://npm.pkg.github.com"
+
+      - name: Authenticate with private NPM package
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.AUTH }}" > ~/.npmrc
+
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.AUTH }}
+        working-directory: 'assets'
+      - run: npm run lint
+        working-directory: 'assets'

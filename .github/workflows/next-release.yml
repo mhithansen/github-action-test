@@ -1,0 +1,26 @@
+name: next release
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - "develop"
+
+jobs:
+  if_not_merged:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            console.log('${{github.head_ref}}')
+            if('${{github.head_ref}}' == 'main') {
+              core.setFailed('PR from main => develop should not run')
+            }
+            if(context.payload.pull_request.merged) {
+              console.log('pr was merged')
+            } else {
+              core.setFailed('PR was not merged into develop')
+            }

@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/asp/global.asa
+/asp/app/*
+
+/.vs/slnx.sqlite
+/asp/.vs/
+/asp/.vs/*
+/asp/assets/*
+/asp/error-test.asp
+node_modules
