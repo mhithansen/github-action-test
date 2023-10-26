@@ -5,7 +5,7 @@ on:
     branches:
       - 'feature/**'
     paths:
-     - '**/assets/**'
+     - 'assets/**'
     
 jobs:
   lint_assets_folder:
