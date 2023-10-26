@@ -5,8 +5,8 @@ on:
     branches:
     - 'develop'
     - 'feature/**'
-    paths: 
-    - '!assets'
+    paths-ignore: 
+    - 'web/**/*'
 
 jobs:
   lint_frontend_job:
