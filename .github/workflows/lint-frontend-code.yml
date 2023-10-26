@@ -1,5 +1,10 @@
 name: Lint frontend code
 on:
+  push:
+    branches:
+      - 'feature/**'
+    paths:
+     - 'app/**'
   pull_request:
     types: [opened, synchronize]
     branches:
