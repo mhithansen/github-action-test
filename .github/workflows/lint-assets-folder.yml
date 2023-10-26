@@ -7,7 +7,7 @@ on:
     
 jobs:
   lint_assets_folder:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request')
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'synchronize' && contains(github.event.pull_request.changed_files, 'assets/'))
     name: Lint assets folder
     runs-on: ubuntu-latest
     steps:
