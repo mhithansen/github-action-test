@@ -2,12 +2,14 @@ name: Lint assets folder
 on:
  pull_request:
     types: [opened, synchronize]
+    branches:
+      - 'feature/**'
     paths:
-     - '**/assets/**/*'
+     - '**/assets/**'
     
 jobs:
   lint_assets_folder:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'synchronize' && contains(github.event.pull_request.changed_files, 'assets/'))
+    if: github.event_name == 'push' || (github.event_name == 'pull_request')
     name: Lint assets folder
     runs-on: ubuntu-latest
     steps:
