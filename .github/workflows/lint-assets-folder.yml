@@ -1,9 +1,16 @@
 name: Lint assets folder
 on:
+ push:
+    branches:
+      - 'feature/**'
+    paths:
+     - 'assets/**'
  pull_request:
     types: [opened, synchronize]
-    paths-ignore:
-      - 'assets/**/*'
+    branches:
+      - 'feature/**'
+    paths:
+     - 'assets/**'
     
 jobs:
   lint_assets_folder:
