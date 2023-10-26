@@ -1,4 +1,4 @@
-name: Lint frontend code
+name: Lint app folder
 on:
   push:
     branches:
@@ -13,9 +13,9 @@ on:
      - 'app/**'
 
 jobs:
-  lint_frontend_job:
+  lint_app_folder:
     if: github.event_name == 'push' || (github.event_name == 'pull_request')
-    name: Lint frontend code
+    name: Lint app folder
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
